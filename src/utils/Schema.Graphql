@@ -1,0 +1,11 @@
+type Query {
+hello(name: String!): String!
+hi(why: String!): String
+hey(why: String!): String
+}
+# type Mutation{
+
+# }
+# type Subscription{
+
+# }
