@@ -1,10 +1,9 @@
 import "dotenv/config";
 import http from 'http'
-import express from 'express'
 import app from './app.js'
 import serverGraphql from './serverGraphql.js'
 
-// const app= express()
+
 
 const PORT = process.env.PORT || 8000;
 
