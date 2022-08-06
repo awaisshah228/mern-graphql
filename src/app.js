@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan';
-import  cookieParser from 'cookie-parser'
+import cookieParser from 'cookie-parser'
 import helmet from 'helmet'
 
 
@@ -14,7 +14,7 @@ const app = express();
 //     helmet({
 //       crossOriginEmbedderPolicy: !isDevelopment,
 //       contentSecurityPolicy: !isDevelopment,
-//     }),
+//     })
 //   )
 // app.use(helmet());
 
