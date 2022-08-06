@@ -1,7 +1,9 @@
 type Query {
-hello(name: String!): String!
-hi(why: String!): String
-hey(why: String!): String
+
+    hello(name: String!): String!
+    hi(why: String!): String
+    hey(why: String!): String
+
 }
 # type Mutation{
 
