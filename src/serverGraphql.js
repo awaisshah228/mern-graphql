@@ -16,13 +16,20 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * @return {ApolloServer<ExpressContext>}
  */
 export default async function serverGraphql(app, httpServer) {
+  // loading  types
   const typesArray = loadFilesSync(path.join(__dirname, '**/*.graphql'));
+
+
+  // loading resolvers
   const resolversArray =
    loadFilesSync(path.join(__dirname, '**/*.resolvers.js'));
+
+  // creating schemas
   const schema = makeExecutableSchema({
     typeDefs: typesArray,
     resolvers: resolversArray,
   });
+
   const server = new ApolloServer({
     // typeDefs: fs.readFileSync(`${__dirname}/utils/Schema.Graphql`)
     // .toString(),
@@ -37,8 +44,6 @@ export default async function serverGraphql(app, httpServer) {
   await server.start();
   server.applyMiddleware({
     app,
-
-
     path: '/',
   });
   return server.graphqlPath;
